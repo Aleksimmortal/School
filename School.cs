@@ -6,40 +6,43 @@ using System.Threading.Tasks;
 
 namespace SchoolProject
 {
-    public class School
+    public class School <T>
     {
-        public List<Student> Students;
+        public List <T> SchoolPersons;
+        public List Teachers;
        
-        public School()
+        public School(List<Student> stud)
         {
-            List<Student> Students = new List<Student>(100);
+            SchoolPersons = new List <Student>();
             Student student1 = new Student(1, "Tom", "Jefferson", 14);
             Student student2 = new Student(2, "Mat", "Pattison", 13);
             Student student3 = new Student(3, "Daimon", "Robertson", 14);
             Student student4 = new Student(4, "Jhon", "Smith", 15);
-            Students.Add(student1);
-            Students.Add(student2);
-            Students.Add(student3);
-            Students.Add(student4);
+            SchoolPersons.Add(student1);
+            SchoolPersons.Add(student2);
+            SchoolPersons.Add(student3);
+            SchoolPersons.Add(student4);     
+        }
 
-
-            List<Teacher> Teachers = new List<Teacher>();
-            Teacher teacher1 = new Teacher("English","Dana", "Simpson", 34);
-            Teacher teacher2 = new Teacher("Math", "Alan", "Draizer", 40);
-            Teacher teacher3 = new Teacher("Physical training", "Stan", "Richmond", 28);
-            Teacher teacher4 = new Teacher("Physics", "Edgard", "White", 43);
+        public School(List<Teacher> teach)
+        {
+            SchoolPersons = new List<Teacher<T>>();
+            Teacher<T> teacher1 = new Teacher<T>("English", "Dana", "Simpson", 34);
+            Teacher<T> teacher2 = new Teacher<T>("Math", "Alan", "Draizer", 40);
+            Teacher<T> teacher3 = new Teacher<T>("Physical training", "Stan", "Richmond", 28);
+            Teacher<T> teacher4 = new Teacher<T>("Physics", "Edgard", "White", 43);
             Teachers.Add(teacher1);
             Teachers.Add(teacher2);
             Teachers.Add(teacher3);
             Teachers.Add(teacher4);
-
         }
 
-        public void ViewStudents()
+        public void Viewwer()
         {
-            foreach (Student student in Students)
+            for (int i = 0; i < SchoolPersons.Count; i++)
             {
-                Console.WriteLine(student);
+                SchoolPersons[i].Veiw();
+                Console.WriteLine();
             }
         }
     }

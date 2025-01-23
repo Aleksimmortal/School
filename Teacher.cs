@@ -16,6 +16,10 @@ namespace SchoolProject
             Name = name;
             LastName = lastname;
             Age = age;
-        }    
+        }
+        public void Veiw()
+        {
+            Console.WriteLine($"ID {TeacherType} Имя {Name} Фамилия {LastName} Возраст {Age}");
+        }
     }
 }
