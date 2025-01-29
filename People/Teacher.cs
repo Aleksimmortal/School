@@ -1,11 +1,10 @@
-﻿using SchoolProject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject
+namespace School.People
 {
     public class Teacher : Person
     {
@@ -16,10 +15,6 @@ namespace SchoolProject
             Name = name;
             LastName = lastname;
             Age = age;
-        }
-        public void Veiw()
-        {
-            Console.WriteLine($"ID {TeacherType} Имя {Name} Фамилия {LastName} Возраст {Age}");
         }
     }
 }

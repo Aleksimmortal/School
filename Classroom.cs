@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolProject
+namespace School
 {
-    public class Person
+    public class Classroom
     {
         public string Name { get; set; }
-        public string LastName { get; set; }
-        public int Age { get; set; }
+        public Classroom()
+        {
+            Name = "101C";
+        }
+
     }
 }

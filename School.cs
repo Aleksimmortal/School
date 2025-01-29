@@ -3,47 +3,62 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using School;
+using School.People;
 
 namespace SchoolProject
 {
-    public class School <T>
+    public class School
     {
-        public List <T> SchoolPersons;
-        public List Teachers;
+        public List<Student> Students;
+        public List<Teacher> Teachers;
+        public List<Service_staff> Service;
+        public Building Builder;
        
-        public School(List<Student> stud)
+        public School(List<Student> stud, List<Teacher> teach, List<Service_staff> service, Building build)
         {
-            SchoolPersons = new List <Student>();
-            Student student1 = new Student(1, "Tom", "Jefferson", 14);
-            Student student2 = new Student(2, "Mat", "Pattison", 13);
-            Student student3 = new Student(3, "Daimon", "Robertson", 14);
-            Student student4 = new Student(4, "Jhon", "Smith", 15);
-            SchoolPersons.Add(student1);
-            SchoolPersons.Add(student2);
-            SchoolPersons.Add(student3);
-            SchoolPersons.Add(student4);     
+            Students = stud;
+            Teachers = teach;
+            Service = service;
+            Builder = build;
         }
 
-        public School(List<Teacher> teach)
+        public void ViewwerBuilding()
         {
-            SchoolPersons = new List<Teacher<T>>();
-            Teacher<T> teacher1 = new Teacher<T>("English", "Dana", "Simpson", 34);
-            Teacher<T> teacher2 = new Teacher<T>("Math", "Alan", "Draizer", 40);
-            Teacher<T> teacher3 = new Teacher<T>("Physical training", "Stan", "Richmond", 28);
-            Teacher<T> teacher4 = new Teacher<T>("Physics", "Edgard", "White", 43);
-            Teachers.Add(teacher1);
-            Teachers.Add(teacher2);
-            Teachers.Add(teacher3);
-            Teachers.Add(teacher4);
+            Console.WriteLine();
+            Console.WriteLine("=======Здание школы=======");
+            Console.WriteLine($" {Builder.CountFloor}-х этажное здание, на каждом этаже {Builder.CountClassFloor} класса, номер 1-ой аудитории  ");
         }
-
-        public void Viewwer()
+        
+        public void ViewwerStudents()
         {
-            for (int i = 0; i < SchoolPersons.Count; i++)
+            Console.WriteLine();
+            Console.WriteLine("=======Список учеников=======");
+            foreach (Student student in Students)
             {
-                SchoolPersons[i].Veiw();
-                Console.WriteLine();
+                Console.WriteLine($"Номер класса {student.NumberClass} Имя {student.Name} Фамилия {student.LastName}  Возраст {student.Age}");
             }
+            Console.WriteLine();
+        }
+        public void ViewwerTeachers()
+        {
+            Console.WriteLine();
+            Console.WriteLine("=======Список учителей=======");
+            foreach (Teacher teacher in Teachers)
+            {
+                Console.WriteLine($"Предмет {teacher.TeacherType} Имя {teacher.Name} Фамилия {teacher.LastName} Возраст {teacher.Age}");
+            }
+            Console.WriteLine();
+        }
+        public void ViewwerService()
+        {
+            Console.WriteLine();
+            Console.WriteLine("=======Список обслуживающего персонала=======");
+            foreach (Service_staff service in Service)
+            {
+                Console.WriteLine($"Должность {service.Type} Имя {service.Name} Фамилия {service.LastName} Возраст {service.Age}");
+            }
+            Console.WriteLine();
         }
     }
 }
