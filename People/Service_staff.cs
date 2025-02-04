@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace School.People
 {
@@ -10,12 +11,9 @@ namespace School.People
     {
         public string Type { get; set; }
 
-        public Service_staff(string type, string name, string lastname, int age)
+        public Service_staff(string name, string lastname, int age, string type) : base(name, lastname, age)
         {
             Type = type;
-            Name = name;
-            LastName = lastname;
-            Age = age;
         }
     }
 }

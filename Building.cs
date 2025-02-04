@@ -11,12 +11,12 @@ namespace School
         public int CountFloor {  get; set; }
         public int CountClassFloor { get; set; }
         
-        Classroom Classroom { get; set; }
-        public Building(int floor, int countclassfloor, Classroom classroom)
+        public List <Classroom> Classrooms { get; set; }
+        public Building(int floor, int countclassfloor, List<Classroom> classroom)
         {
             CountFloor = floor;
             CountClassFloor = countclassfloor;
-            Classroom = classroom;
+            Classrooms = classroom;
         }
     }
 }

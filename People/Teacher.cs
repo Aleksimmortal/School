@@ -9,12 +9,9 @@ namespace School.People
     public class Teacher : Person
     {
         public string TeacherType { get; set; }
-        public Teacher(string teachertype, string name, string lastname, int age)
+        public Teacher(string name, string lastname, int age, string teachertype) : base(name, lastname, age)
         {
             TeacherType = teachertype;
-            Name = name;
-            LastName = lastname;
-            Age = age;
         }
     }
 }

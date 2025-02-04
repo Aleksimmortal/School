@@ -10,12 +10,9 @@ namespace School.People
     {
         public int NumberClass { get; set; }
 
-        public Student(int numberclass, string name, string lastname, int age)
+        public Student(string name, string lastname, int age, int numberclass) : base (name, lastname, age)
         {
             NumberClass = numberclass;
-            Name = name;
-            LastName = lastname;
-            Age = age;
         }
     }
 }

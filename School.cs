@@ -27,7 +27,11 @@ namespace SchoolProject
         {
             Console.WriteLine();
             Console.WriteLine("=======Здание школы=======");
-            Console.WriteLine($" {Builder.CountFloor}-х этажное здание, на каждом этаже {Builder.CountClassFloor} класса, номер 1-ой аудитории  ");
+            Console.WriteLine($" {Builder.CountFloor}-х этажное здание, на каждом этаже {Builder.CountClassFloor} класса, номер 1-ой аудитории - {Builder.Classrooms.FirstOrDefault().Name}  ");
+            foreach (Classroom classroom in Builder.Classrooms)
+            {
+                Console.WriteLine($"Следующие аудитории: {classroom} ");
+            }
         }
         
         public void ViewwerStudents()

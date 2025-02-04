@@ -9,9 +9,9 @@ namespace School
     public class Classroom
     {
         public string Name { get; set; }
-        public Classroom()
+        public Classroom(string name)
         {
-            Name = "101C";
+            Name = name;
         }
 
     }
